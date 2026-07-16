@@ -1,0 +1,22 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docsSidebar.category.1. GS130W 双目摄像头模组": {
+    "message": "1. GS130W Stereo Camera Module",
+    "description": "The label for category 1. GS130W 双目摄像头模组 in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.2. GS130WI 双目摄像头模组": {
+    "message": "2. GS130WI Stereo Camera Module (Integrated IMU)",
+    "description": "The label for category 2. GS130WI 双目摄像头模组 in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.3. RDK IMU 模组": {
+    "message": "3. RDK IMU Module",
+    "description": "The label for category 3. RDK IMU 模组 in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.1 软件说明": {
+    "message": "1 Software Guide",
+    "description": "The label for category 1 软件说明 in sidebar docsSidebar"
+  }
+}

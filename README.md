@@ -97,8 +97,8 @@ npm run serve -- --host=10.64.62.34 --port=1688 --no-open
 ```
 
 常见访问路径（端口以实际 `serve` 输出为准）：
-- 英文：`http://localhost:3000/en/accessories_doc/accessories`
-- 中文：`http://localhost:3000/accessories_doc/accessories`
+- 英文：`http://localhost:3000/en/accessories_doc/en/introduction`
+- 中文：`http://localhost:3000/accessories_doc/introduction`
 
 
 

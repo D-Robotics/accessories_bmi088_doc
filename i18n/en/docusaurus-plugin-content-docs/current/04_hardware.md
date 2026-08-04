@@ -2,17 +2,17 @@
 sidebar_position: 4
 ---
 
-# 3.4 Hardware Reference
+# Hardware Reference
 
 ## Mechanical Installation
 
 The RDK IMU core board has one 2×7 pin header and four mounting holes. It connects to the 2×7 socket on the carrier board and can be secured with four M2.5×11 standoffs and screws, or a custom support structure. Core board dimensions (unit: mm):
 
-![RDK IMU mechanical installation](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_structure_installation.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_structure_installation.png" alt="RDK IMU mechanical installation" width="80%" />
 
 The carrier board has one 2×7 socket and four mounting holes for the core board, plus one 40-pin socket and three mounting holes for the development board. It can be secured with three M2.5×11 standoffs and screws, or a custom support structure. Carrier board dimensions (unit: mm):
 
-![RDK IMU mechanical dimensions](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_structure_dimensions.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_structure_dimensions.png" alt="RDK IMU mechanical dimensions" width="80%" />
 
 ## Hardware Interface Reference
 
@@ -20,11 +20,11 @@ The carrier board has one 2×7 socket and four mounting holes for the core board
 
 The diagram below shows the hardware topology between the RDK IMU Module and an RDK development board.
 
-![RDK IMU hardware topology](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_hardware_topology.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_hardware_topology.png" alt="RDK IMU hardware topology" width="80%" />
 
 ### Component List
 
-![RDK IMU component models](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_component_models.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_component_models.png" alt="RDK IMU component models" width="80%" />
 
 | Ref | Component |
 | --- | --- |
@@ -37,7 +37,7 @@ The diagram below shows the hardware topology between the RDK IMU Module and an 
 
 ### Interface Description
 
-#### ① 40-Pin Header
+#### 40-Pin Header
 
 This interface connects to the development board 40-pin header and is the only link between the IMU module and the board.  
 Pin 1 matches the RDK X5 definition. Pin assignment:
@@ -65,28 +65,28 @@ Pin 1 matches the RDK X5 definition. Pin assignment:
 | Connect DS18B20 | DQ | 37 | 38 | INT3 | Used for Interrupt |
 | | GND | 39 | 40 | N/A | |
 
-#### ② Communication Mode Selector
+#### Communication Mode Selector
 
 Use this interface to switch the module communication mode. Connect the center 5-pin header to the five pins labeled **I2C** with jumper caps to select I2C, as shown:
 
-![I2C mode selection](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_comm_i2c.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_comm_i2c.png" alt="I2C mode selection" width="50%" />
 
 Connect the center 5-pin header to the five pins labeled **SPI** to select SPI, as shown:
 
-![SPI mode selection](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_comm_spi.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_comm_spi.png" alt="SPI mode selection" width="50%" />
 
-#### ③ IMU Core Board Connector
+#### IMU Core Board Connector
 
 Connects the IMU core board to the carrier board.
 
-#### ④ Indicator LEDs
+#### Indicator LEDs
 
 The carrier board has three LEDs for status indication, driven via 40-pin GPIO.
 
-#### ⑤ Buzzer
+#### Buzzer
 
 The carrier board has an active buzzer for status indication.
 
-#### ⑥ Temperature Sensor
+#### Temperature Sensor
 
 The carrier board includes a DS18B20 temperature sensor on the 1-Wire bus for ambient or carrier board temperature measurement.

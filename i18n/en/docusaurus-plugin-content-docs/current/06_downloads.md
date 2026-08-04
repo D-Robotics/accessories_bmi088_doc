@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# 3.6 Downloads
+# Downloads
 
 | Document | Size | Description |
 | --- | --- | --- |

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title: 4 RDK OS IIO Driver
+title: RDK OS IIO Driver
 sidebar_products: RDK-X5,RDK X5 Module
 ---
 

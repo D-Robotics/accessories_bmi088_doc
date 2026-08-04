@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: 1 C API
+title: C API
 ---
 
 # C API Reference
@@ -48,7 +48,7 @@ From the `core` directory:
 
 ## API Reference
 
-### 1. Obtaining a Handle
+### Obtaining a Handle
 
 The IMU device is represented by a handle of type `rdk_imu_state_t`. Do not declare a handle directly as `rdk_imu_state_t imu_st`, because `rdk_imu_state_t` is an opaque forward declaration in the header and the compiler cannot determine its size.
 
@@ -66,7 +66,7 @@ rdk_imu_state_t *imu_st = rdk_imu_create_default();
 
 All subsequent operations use a pointer to `rdk_imu_state_t`, not the struct by value.
 
-### 2. Bus Configuration
+### Bus Configuration
 
 `rdk_imu_bus_init` auto-discovers available IMU devices and initializes the bus, or initializes the bus according to `bus_info`.
 
@@ -132,7 +132,7 @@ rdk_imu_err_t ret = rdk_imu_bus_init(imu_st, bus_info);
 if (ret != RDK_IMU_OK) return ret;
 ```
 
-### 3. Device Configuration
+### Device Configuration
 
 Use `rdk_imu_device_init` to configure IMU properties: range, bandwidth, sample rate, interrupt settings, software FIFO, and interrupt thread options.
 
@@ -204,7 +204,7 @@ if (ret != RDK_IMU_OK) return ret;
 
 To change configuration after initialization, disable the device first (see below).
 
-### 4. Enable Data Acquisition
+### Enable Data Acquisition
 
 After bus and device initialization return `RDK_IMU_OK` (0), call `rdk_imu_enable` to start data acquisition.
 
@@ -228,7 +228,7 @@ if (ret != RDK_IMU_OK) return ret;
 
 `rdk_imu_enable` is thread-safe. Only one caller succeeds with `RDK_IMU_OK` (0) before `rdk_imu_disable`; duplicate enable attempts return `RDK_IMU_DEVICE_BUSY`.
 
-### 5. Reading IMU Data
+### Reading IMU Data
 
 As of v1.0.0, three read APIs are available:
 
@@ -321,7 +321,7 @@ Where:
 - `timestamp_ns`: SoC timestamp at sample time in nanoseconds; v1.0.0 uses `CLOCK_MONOTONIC` from `gpiod.h`.
 - `valid`: 0 means valid; any other value means invalid.
 
-### 6. Disable Data Acquisition
+### Disable Data Acquisition
 
 Call `rdk_imu_disable` to stop the interrupt thread and FIFO filling.
 
@@ -330,7 +330,7 @@ rdk_imu_err_t rdk_imu_disable(
     rdk_imu_state_t* st);
 ```
 
-### 7. Deinitialize Device
+### Deinitialize Device
 
 Call `rdk_imu_device_deinit` to deinitialize the IMU device.
 
@@ -339,7 +339,7 @@ rdk_imu_err_t rdk_imu_device_deinit(
     rdk_imu_state_t* st);
 ```
 
-### 8. Deinitialize Bus
+### Deinitialize Bus
 
 Call `rdk_imu_bus_deinit` to release bus resources.
 
@@ -348,7 +348,7 @@ rdk_imu_err_t rdk_imu_bus_deinit(
     rdk_imu_state_t* st);
 ```
 
-### 9. Destroy Handle
+### Destroy Handle
 
 Call `rdk_imu_destroy` to safely free the IMU handle.
 

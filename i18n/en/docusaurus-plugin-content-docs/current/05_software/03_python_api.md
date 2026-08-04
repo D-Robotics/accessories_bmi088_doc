@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: 2 Python API
+title: Python API
 ---
 
 # Python API Reference
@@ -69,7 +69,7 @@ imu = IMU(lib_path="./librdkimu.so") # Specify library path
 
 Call order matches the C API: `bus()` → `config()` → `enable()` → `read_*()` → `disable()` → automatic cleanup on exit.
 
-### 1. Bus Configuration
+### Bus Configuration
 
 Use the `.bus` method:
 
@@ -85,7 +85,7 @@ def bus(self,
 - `interface`: communication interface; default `AUTO` for auto-scan, or specify `I2C` or `SPI`.
 - With auto-scan, device addresses are optional; with I2C/SPI, pass bus number, address, chip select, speed, etc. as keyword arguments.
 
-### 2. Device Configuration
+### Device Configuration
 
 Use the `.config` method:
 
@@ -108,7 +108,7 @@ imu.config(my_config)
 
 Supported keys and values match the C API; see the `rdk_imu_config_t` table in [C API Reference](./02_c_api.md). Common keys include `accel_odr`, `accel_range`, `gyro_range`, `gyro_bandwidth`, `fifo_length`, etc.
 
-### 3. Enable and Disable
+### Enable and Disable
 
 Use `.enable()` and `.disable()` to start and stop the IMU:
 
@@ -119,7 +119,7 @@ imu.disable()  # Stop data acquisition
 
 `enable()` is idempotent at the Python level, but only the first successful call takes effect; subsequent calls return an error (thread safety enforced in the C library).
 
-### 4. Reading Data
+### Reading Data
 
 Query FIFO depth:
 
@@ -145,7 +145,7 @@ data = imu.read_fused(fuse_by=RDK_IMU_DEVICE.ACCEL, max_age_ns=50000000)
 - `fuse_by`: reference sensor—`RDK_IMU_DEVICE.ACCEL` or `RDK_IMU_DEVICE.GYRO`.
 - `max_age_ns`: maximum interpolation time window in nanoseconds; calls block if exceeded; set to at least 3× the ODR period (e.g. at 400 Hz, period 2.5 ms, use 7500000 ns).
 
-### 5. Data Structures
+### Data Structures
 
 `RDK_IMU_6_AXIS_DATA` contains two `RDK_IMU_3_AXIS_DATA` members:
 
@@ -158,7 +158,7 @@ Where:
 - `timestamp_ns`: `int`; hardware timestamp in nanoseconds based on `CLOCK_MONOTONIC`.
 - `valid`: `int`; 0 means valid.
 
-### 6. Resource Cleanup
+### Resource Cleanup
 
 Prefer a context manager or call `imu.close()` explicitly:
 

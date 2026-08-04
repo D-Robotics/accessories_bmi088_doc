@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# 3.5 Software Guide
+# Software Guide
 
 After connecting the IMU module on an RDK platform, you can load the device with the official Linux IIO driver adapted for BMI088 and read IMU data through the corresponding character device files.
 

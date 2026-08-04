@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# 3.3 快速开始
+# 快速开始
 
 ## SDK 获取
 
@@ -52,11 +52,11 @@ make
 
 使用 `sudo ./out/test` 可以看到以下输出（如果是 SPI 接口，初始化会比较慢，只要终端没报错一直等待即可），`Ctrl+C` 可退出。
 
-![SPI 接口初始化较慢](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_spi_init.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_spi_init.png" alt="SPI 接口初始化较慢" width="70%" /><br/>
 
 此外，也可以使用 `make test` 快速构建并运行示例。
 
-![快速构建并运行示例](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_make_test.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_make_test.png" alt="快速构建并运行示例" width="70%" /><br/>
 
 还可以通过 `make install` 将 SDK 头文件和库文件安装到系统路径中，或使用 `make uninstall` 卸载。
 
@@ -79,7 +79,7 @@ pip install dist/rdkimu-*.whl
 
 安装完成后，输入 `sudo python3 examples/test_imu.py` 运行 Python 示例，行为与 C 示例同理，`Ctrl+C` 可退出。
 
-![Python 示例运行](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_python_example.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_python_example.png" alt="Python 示例运行" width="70%" />
 
 ## 运行 ROS2 示例
 
@@ -99,11 +99,11 @@ ros2 launch rdk_imu_module rdk_imu.launch.py
 
 输出如下，表示 IMU 节点已启动，默认 IMU 话题名称为 `/rdkimu/data`。
 
-![ROS2 示例运行](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_ros2_example.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_ros2_example.png" alt="ROS2 示例运行" width="70%" /><br/>
 
 另起一个终端，激活环境，可以使用 `ros2 topic` 命令查看 IMU 数据。
 
-![ROS2 示例运行](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_ros2_topic.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_ros2_topic.png" alt="ROS2 示例运行" width="70%" />
 
 
 ## 下一步指引

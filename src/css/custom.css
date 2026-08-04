@@ -434,6 +434,13 @@ article.markdown .table-responsive > table td {
   margin: 0;
 }
 
+/* 正文图片居中（表格小图除外） */
+.markdown img:not(.table-item-image) {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* 图片点击放大交互光标 */
 .markdown img {
   cursor: zoom-in;

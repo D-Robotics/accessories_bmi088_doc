@@ -1,13 +1,13 @@
-﻿---
+---
 sidebar_position: 1
 slug: /introduction
 ---
 
-# 3.1 产品简介
+# 产品简介
 
 RDK™ IMU 模组采用 Bosch Sensortec 推出的高性能 6 轴惯性测量单元（IMU）BMI088 实现，包含一个三轴陀螺仪和一个三轴加速度计，均为 16 位精度。BMI088 专为要求高精度和抗振性能的应用场景而设计，尤其适合无人机、机器人等强震动环境中使用。BMI088 具备 ±24g 加速度和 ±2000°/s 角速度的扩展量程，具有优异的温漂表现（低 TCO/TCS），出厂已校准，可实现高稳定性的姿态与运动感知。
 
-![RDK IMU 模组示意图](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_product_overview.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_product_overview.png" alt="RDK IMU 模组示意图" width="80%" />
 
 ## 适用板卡
 
@@ -25,7 +25,7 @@ RDK™ IMU 模组采用 Bosch Sensortec 推出的高性能 6 轴惯性测量单�
 
 ## 硬件接口
 
-![RDK IMU 硬件接口](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_hardware_interfaces.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_hardware_interfaces.png" alt="RDK IMU 硬件接口" width="80%" />
 
 1. 40PIN 接口：用于对接开发板 40PIN 排针，是连接 IMU 模组与开发板的唯一接口。
 2. 通信方式选择接口：一组 3×5 排针，使用跳线帽短接的方式选择模组的通信方式（I2C/SPI）。

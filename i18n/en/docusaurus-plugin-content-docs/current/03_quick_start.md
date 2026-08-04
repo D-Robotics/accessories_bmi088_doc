@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# 3.3 Quick Start
+# Quick Start
 
 ## Obtaining the SDK
 
@@ -52,11 +52,11 @@ After a successful build, `out/test` is produced. It auto-detects the IMU interf
 
 Run `sudo ./out/test` to see output like below (SPI initialization can be slow—wait as long as there are no errors). Press `Ctrl+C` to exit.
 
-![Slow SPI initialization](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_spi_init.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_spi_init.png" alt="Slow SPI initialization" width="70%" /><br/>
 
 You can also use `make test` to build and run the example in one step.
 
-![Build and run example quickly](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_make_test.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_make_test.png" alt="Build and run example quickly" width="70%" /><br/>
 
 Use `make install` to install SDK headers and libraries to system paths, or `make uninstall` to remove them.
 
@@ -79,7 +79,7 @@ Or use `make install` to build and install automatically (`make uninstall` to re
 
 After installation, run `sudo python3 examples/test_imu.py`. Behavior matches the C example. Press `Ctrl+C` to exit.
 
-![Python example output](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_python_example.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_python_example.png" alt="Python example output" width="70%" />
 
 ## Run the ROS2 Example
 
@@ -99,11 +99,11 @@ ros2 launch rdk_imu_module rdk_imu.launch.py
 
 Output like below indicates the IMU node is running. The default topic is `/rdkimu/data`.
 
-![ROS2 example running](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_ros2_example.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_ros2_example.png" alt="ROS2 example running" width="70%" /><br/>
 
 In another terminal with the environment sourced, use `ros2 topic` to inspect IMU data.
 
-![ROS2 topic output](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_ros2_topic.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_ros2_topic.png" alt="ROS2 topic output" width="70%" />
 
 ## Next Steps
 

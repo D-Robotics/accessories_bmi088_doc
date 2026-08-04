@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title: 3.5.4 RDK OS IIO 驱动使用说明
+title: RDK OS IIO 驱动使用说明
 sidebar_products: RDK X5,RDK X5 Module
 ---
 

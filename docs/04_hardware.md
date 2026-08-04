@@ -2,17 +2,17 @@
 sidebar_position: 4
 ---
 
-# 3.4 硬件说明
+# 硬件说明
 
 ## 结构安装说明
 
 RDK IMU 模组核心板拥有 1 个 2×7 排针接口和 4 个安装孔，可以将其接入 RDK IMU 模组载板的 2×7 排母，并使用 4 颗 M2.5×11 铜柱和若干螺栓固定，或自制其他支撑结构安装，RDK IMU 模组核心板尺寸示意图下（Unit：mm）。
 
-![RDK IMU 结构安装](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_structure_installation.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_structure_installation.png" alt="RDK IMU 结构安装" width="80%" />
 
 RDK IMU 模组载板拥有 1 个 2×7 排母接口和 4 个安装孔用于连接核心板；此外还拥有 1 个 40PIN 排母接口和 3 个安装孔，用于接入开发板并使用 3 颗 M2.5×11 铜柱和若干螺栓固定，或自制其他支撑结构安装，RDK IMU 模组载板尺寸示意图下（Unit：mm）。
 
-![RDK IMU 结构尺寸](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_structure_dimensions.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_structure_dimensions.png" alt="RDK IMU 结构尺寸" width="80%" />
 
 ## 硬件接口说明
 
@@ -20,11 +20,11 @@ RDK IMU 模组载板拥有 1 个 2×7 排母接口和 4 个安装孔用于连接
 
 下图示意 RDK IMU 模组与 RDK 开发板的硬件拓扑关系。
 
-![RDK IMU 硬件拓扑](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_hardware_topology.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_hardware_topology.png" alt="RDK IMU 硬件拓扑" width="80%" />
 
 ### 器件型号
 
-![RDK IMU 器件型号](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_component_models.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_component_models.png" alt="RDK IMU 器件型号" width="80%" />
 
 | 器件 | 器件型号 |
 | --- | --- |
@@ -37,7 +37,7 @@ RDK IMU 模组载板拥有 1 个 2×7 排母接口和 4 个安装孔用于连接
 
 ### 接口描述
 
-#### ① 40PIN 接口
+#### 40PIN 接口
 
 该接口用于对接开发板 40PIN 排针，是连接 IMU 模组与开发板的唯一接口。  
 该接口的 PIN1 脚定义与 RDK X5 一致，下表为接口定义说明。
@@ -65,28 +65,28 @@ RDK IMU 模组载板拥有 1 个 2×7 排母接口和 4 个安装孔用于连接
 | Connect DS18B20  | DQ| 37 | 38 | INT3 | Used for Interrupt |
 | | GND | 39 | 40 | N/A | |
 
-#### ② 通信方式选择接口
+#### 通信方式选择接口
 
 该接口用于切换 RDK IMU 模组的通信方式，使用 5 个跳线帽将中间 5PIN 排针与 “I2C” 丝印一侧 5PIN 排针连接，即可选择 I2C 通信，如下图所示：
 
-![I2C 通信方式选择](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_comm_i2c.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_comm_i2c.png" alt="I2C 通信方式选择" width="50%" />
 
 将中间 5PIN 排针与 “SPI” 丝印一侧 5PIN 排针连接，即可选择 SPI 通信，如下图所示：
 
-![SPI 通信方式选择](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_comm_spi.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_comm_spi.png" alt="SPI 通信方式选择" width="50%" />
 
-#### ③ IMU 核心板接口
+#### IMU 核心板接口
 
 该接口用于连接 IMU 模组核心板和 IMU 模组载板。
 
-#### ④ 指示灯
+#### 指示灯
 
 RDK IMU 载板搭载 3 颗 LED，可用于模组状态指示，使用 40PIN GPIO 驱动。
 
-#### ⑤ 蜂鸣器
+#### 蜂鸣器
 
 RDK IMU 载板搭载有源蜂鸣器，可用于模组状态指示。
 
-#### ⑥ 温度传感器
+#### 温度传感器
 
 RDK IMU 载板搭载一颗 DS18B20 温度传感器，这是一颗使用 1-Wire 总线协议的传感器，可用于检测环境温度或载板温度。

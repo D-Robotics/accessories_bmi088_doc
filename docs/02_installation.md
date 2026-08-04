@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# 3.2 安装方法
+# 安装方法
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -27,9 +27,9 @@ import DocScope from '@site/src/components/DocScope';
 1. 对齐 IMU 模组核心板的 2×7 排针和 IMU 模组载板的 2×7 排母，垂直插入。
 2. 对齐 IMU 模组载板的 40PIN 排母和开发板的 40PIN 排针，垂直插入，完成连接。
 
-![RDK IMU 安装连接](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_installation_connection.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_installation_connection.png" alt="RDK IMU 安装连接" width="80%" />
 
 如果希望 IMU 模组与开发板之间保持刚性，可以自制支撑结构，下图展示通过 7 颗 M2.5×11 铜柱和若干 M2.5 螺栓安装 IMU 模组的方式。
 
-![RDK IMU 刚性安装](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_rigid_mount.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_rigid_mount.png" alt="RDK IMU 刚性安装" width="80%" />
 

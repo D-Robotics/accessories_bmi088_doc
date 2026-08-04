@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: 3.5.2 Python-API 使用说明
+title: Python-API 使用说明
 ---
 
 # Python-API 使用说明
@@ -69,7 +69,7 @@ imu = IMU(lib_path="./librdkimu.so") # 指定库路径
 
 方法调用顺序与 C-API 完全一致：`bus()` → `config()` → `enable()` → `read_*()` → `disable()` → 程序结束自动释放。
 
-### 1. 总线配置
+### 总线配置
 
 使用 `.bus` 方法：
 
@@ -85,7 +85,7 @@ def bus(self,
 - `interface`：通信接口，默认 `AUTO` 自动扫描，亦可指定 `I2C` 或 `SPI`。
 - 若使用自动扫描，无需填写设备地址；若指定 I2C/SPI，可通过关键字参数传入具体总线号、地址、片选、速率等。
 
-### 2. 设备配置
+### 设备配置
 
 使用 `.config` 方法：
 
@@ -108,7 +108,7 @@ imu.config(my_config)
 
 配置字典支持的键及取值与 C-API 相同，详见 [C-API 使用说明](./02_c_api.md) 中的 `rdk_imu_config_t` 表格。常用的键包括：`accel_odr`、`accel_range`、`gyro_range`、`gyro_bandwidth`、`fifo_length` 等。
 
-### 3. 设备使能与关闭
+### 设备使能与关闭
 
 使用 `.enable()` 和 `.disable()` 方法可以使能和关闭 IMU 设备：
 
@@ -119,7 +119,7 @@ imu.disable()  # 停止数据采集
 
 `enable()` 可重复调用，但只有第一次会生效，后续返回错误（由 C 库保证线程安全）。
 
-### 4. 读取数据
+### 读取数据
 
 查询 FIFO 余量：
 
@@ -145,7 +145,7 @@ data = imu.read_fused(fuse_by=RDK_IMU_DEVICE.ACCEL, max_age_ns=50000000)
 - `fuse_by`：指定以加速度计（`RDK_IMU_DEVICE.ACCEL`）或陀螺仪（`RDK_IMU_DEVICE.GYRO`）的时间戳为基准。
 - `max_age_ns`：允许的最大插值时间窗口（纳秒）。超过此窗口会阻塞等待，建议设为 ODR 周期的 3 倍以上（例如 400 Hz 时，周期 2.5 ms，可设为 7500000 ns）。
 
-### 5. 数据包使用
+### 数据包使用
 
 `RDK_IMU_6_AXIS_DATA` 包含两个 `RDK_IMU_3_AXIS_DATA` 成员：
 
@@ -158,7 +158,7 @@ data = imu.read_fused(fuse_by=RDK_IMU_DEVICE.ACCEL, max_age_ns=50000000)
 - `timestamp_ns`：`int`，硬件时间戳（纳秒），基于 `CLOCK_MONOTONIC`；
 - `valid`：`int`，0 表示数据有效。
 
-### 6. 资源释放
+### 资源释放
 
 建议使用上下文管理器自动清理，或显式调用 `imu.close()`：
 

@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# 3.5 软件说明
+# 软件说明
 
 接入 IMU 模组后，在 RDK 平台中，可以使用官方针对 BMI088 适配好的 Linux IIO 驱动来加载 IMU 设备，通过操作 IMU 相关字符设备文件来获取 IMU 数据。
 

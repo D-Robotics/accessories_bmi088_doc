@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# 3.2 Installation
+# Installation
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -27,8 +27,8 @@ The steps below use the RDK X5 as an example. When connecting to other boards, a
 1. Align the 2×7 pins on the IMU core board with the 2×7 socket on the carrier board and insert vertically.
 2. Align the 40-pin socket on the carrier board with the 40-pin header on the development board and insert vertically to complete the connection.
 
-![RDK IMU installation and connection](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_installation_connection.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_installation_connection.png" alt="RDK IMU installation and connection" width="80%" />
 
 To keep the IMU module rigidly attached to the board, you can build a custom support structure. The figure below shows mounting with seven M2.5×11 standoffs and M2.5 screws.
 
-![RDK IMU rigid mount](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_rigid_mount.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_rigid_mount.png" alt="RDK IMU rigid mount" width="80%" />

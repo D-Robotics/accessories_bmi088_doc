@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: 3.5.1 C-API 使用说明
+title: C-API 使用说明
 ---
 
 # C-API 使用说明
@@ -48,7 +48,7 @@ core/
 
 ## 接口说明
 
-### 1. 获取句柄
+### 获取句柄
 
 IMU 设备被抽象为句柄，类型为 `rdk_imu_state_t`。在使用 SDK 的过程中，不能直接使用 `rdk_imu_state_t imu_st` 的方式初始化句柄，因为在头文件中 `rdk_imu_state_t` 是一个前向声明，成员均为私有，编译器无法获取它的尺寸信息。
 
@@ -66,7 +66,7 @@ rdk_imu_state_t *imu_st = rdk_imu_create_default();
 
 后续对 IMU 的操作，都使用 `rdk_imu_state_t` 结构体指针类型的引用，而非结构体本身。
 
-### 2. 配置总线
+### 配置总线
 
 `rdk_imu_bus_init` 函数用于自动寻找可用的 IMU 设备，并初始化总线设备，或根据 `bus_info` 的内容初始化总线设备。
 
@@ -132,7 +132,7 @@ rdk_imu_err_t ret = rdk_imu_bus_init(imu_st, bus_info);
 if (ret != RDK_IMU_OK) return ret;
 ```
 
-### 3. 配置设备属性
+### 配置设备属性
 
 通过 `rdk_imu_device_init` 函数配置 IMU 的各项属性，包括：量程、带宽、采样频率、中断触发相关设置、软件 FIFO 与中断线程等。
 
@@ -160,9 +160,9 @@ rdk_imu_err_t rdk_imu_device_init(
 | gyro_drdy_gpio_chip | uint32_t | - | SoC 端接收陀螺仪中断的引脚 gpio chip 号 |
 | gyro_drdy_gpio_line | uint32_t | - | SoC 端接收陀螺仪中断的引脚 gpio line 号 |
 | fifo_length | uint32_t | 2^n | 软件 FIFO 的长度，必须是 2 的整数次幂，建议至少设置为 256。 |
-| fifo_mode | rdk_imu_fifo_mode_t | • RDK_IMU_FIFO_DROP<br/>• RDK_IMU_FIFO_OVERWRITE | 软件 FIFO 写入模式，当缓冲区写满时，如果该项被设为 RDK_IMU_FIFO_DROP，新数据将会被丢弃，设为 RDK_IMU_FIFO_OVERWRITE，新数据将会覆盖最旧数据|
-| irq_priority | int32_t | -1 ~ 99 | 中断捕获线程的实时优先级，最高为 99（最高优先级），最低为 0，设置为 -1 表示自动搜索当前权限下可用的最高优先级，较高优先级需要 sudo 提权运行 |
-| irq_thread_timeout_ns | uint64_t | - | 中断捕获线程中，循环捕获中断时间时的超时时间，单位为纳秒，设置过小会导致 CPU 负载提高，设置过大会导致关闭 IMU 的等待时间增加，建议设置为 1e9 |
+| fifo_mode | rdk_imu_fifo_mode_t | • RDK_IMU_FIFO_DROP<br/>• RDK_IMU_FIFO_OVERWRITE | 软件 FIFO 写入模式，当缓冲区写满时，如果该项被设为 RDK_IMU_FIFO_DROP，<br/>新数据将会被丢弃，设为 RDK_IMU_FIFO_OVERWRITE，新数据将会覆盖最旧数据|
+| irq_priority | int32_t | -1 ~ 99 | 中断捕获线程的实时优先级，最高为 99（最高优先级），最低为 0，设置为 -1 表示自动<br/>搜索当前权限下可用的最高优先级，较高优先级需要 sudo 提权运行 |
+| irq_thread_timeout_ns | uint64_t | - | 中断捕获线程中，循环捕获中断时间时的超时时间，单位为纳秒，设置过小会导致 CPU <br/>负载提高，设置过大会导致关闭 IMU 的等待时间增加，建议设置为 1e9 |
 
 实际使用中，可以不用逐个配置。`rdkimu.h` 公共头文件中准备了一些常用开发板的默认配置宏，可以使用这些宏来初始化 `rdk_imu_config_t` 结构体，然后再根据需要做更改。以下为 `RDK_IMU_X5_DEFAULT_CONFIG` 内容：
 
@@ -204,7 +204,7 @@ if (ret != RDK_IMU_OK) return ret;
 
 如果要更改配置，必须先关闭设备（关闭方法见下文）。
 
-### 4. 使能数据采集
+### 使能数据采集
 
 按照顺序初始化总线、初始化设备后，如果 API 的返回值均为 `RDK_IMU_OK` (0)，那么可以使用 `rdk_imu_enable` 使能数据采集。
 
@@ -228,7 +228,7 @@ if (ret != RDK_IMU_OK) return ret;
 
 `rdk_imu_enable` 函数是线程安全的。`rdk_imu_enable` 保证在被 `rdk_imu_disable` 之前，只有一方成功使能并接收到返回值 `RDK_IMU_OK` (0)，重复使能方会接收到返回值 `RDK_IMU_DEVICE_BUSY`。
 
-### 5. 读取 IMU 数据
+### 读取 IMU 数据
 
 目前（v1.0.0 版本），API 提供了 3 个函数可用于 IMU 数据的读取：
 
@@ -321,7 +321,7 @@ typedef struct {
 - `timestamp_ns`：IMU 数据采样时刻的 SoC 系统时间戳，单位为纳秒，当前版本（v1.0.0）中的时钟源默认为 `gpiod.h` 库提供的 `CLOCK_MONOTONIC`。
 - `valid`：表示以上数据是否有效，0 表示有效，其他值表示无效。
 
-### 6. 关闭数据采集
+### 关闭数据采集
 
 使用 `rdk_imu_disable` 函数以关闭中断捕获线程，停止 FIFO 填充。
 
@@ -330,7 +330,7 @@ rdk_imu_err_t rdk_imu_disable(
     rdk_imu_state_t* st);
 ```
 
-### 7. 关闭设备
+### 关闭设备
 
 使用 `rdk_imu_device_deinit` 函数对 IMU 设备进行反初始化，关闭设备。
 
@@ -339,7 +339,7 @@ rdk_imu_err_t rdk_imu_device_deinit(
     rdk_imu_state_t* st);
 ```
 
-### 8. 关闭总线
+### 关闭总线
 
 使用 `rdk_imu_bus_deinit` 函数对 IMU 设备的总线进行反初始化，释放总线设备。
 
@@ -348,7 +348,7 @@ rdk_imu_err_t rdk_imu_bus_deinit(
     rdk_imu_state_t* st);
 ```
 
-### 9. 销毁句柄
+### 销毁句柄
 
 使用 `rdk_imu_destroy` 函数以安全地销毁 IMU 句柄。
 

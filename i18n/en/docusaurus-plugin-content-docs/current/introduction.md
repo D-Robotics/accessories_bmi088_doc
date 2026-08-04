@@ -1,13 +1,13 @@
-﻿---
+---
 sidebar_position: 1
 slug: /introduction
 ---
 
-# 3.1 Product Overview
+# Product Overview
 
 The RDK™ IMU Module is built around the Bosch Sensortec BMI088, a high-performance 6-axis inertial measurement unit (IMU) that combines a 3-axis gyroscope and a 3-axis accelerometer, both with 16-bit resolution. BMI088 is designed for applications that demand high accuracy and vibration resistance, making it well suited for drones, robots, and other environments with strong vibration. It offers extended ranges of ±24 g acceleration and ±2000°/s angular velocity, excellent temperature drift performance (low TCO/TCS), and factory calibration for stable attitude and motion sensing.
 
-![RDK IMU Module overview](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_product_overview.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_product_overview.png" alt="RDK IMU Module overview" width="80%" />
 
 ## Supported Boards
 
@@ -25,7 +25,7 @@ The following table lists compatibility with RDK developer kit boards:
 
 ## Hardware Interfaces
 
-![RDK IMU hardware interfaces](https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_hardware_interfaces.png)
+<img src="https://rdk-doc.oss-cn-beijing.aliyuncs.com/doc/img/accessories/03_imu_module/zh/imu_module_hardware_interfaces.png" alt="RDK IMU hardware interfaces" width="80%" />
 
 1. **40-pin header**: Connects to the development board 40-pin header; the only interface between the IMU module and the board.
 2. **Communication mode selector**: A 3×5 pin header; use jumper caps to select I2C or SPI.

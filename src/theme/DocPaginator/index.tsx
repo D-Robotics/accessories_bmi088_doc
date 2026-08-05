@@ -108,11 +108,7 @@ function normalizePath(path: string | undefined): string {
 
 function normalizePathTail(path: string | undefined): string {
   return normalizePath(path)
-    .replace(/^\/rdk_accessories_bmi088_doc\//, '/')
-    .replace(/^\/accessories_doc\//, '/')
-    .replace(/^\/tros_doc\//, '/')
-    .replace(/^\/rdk_s_doc\//, '/')
-    .replace(/^\/en\//, '/');
+    .replace(/^\/accessories_bmi088_doc\//, '/');
 }
 
 function getVersionKind(pathname: string): 'rdk_s600' | 'camera' | 'mcu' | null {

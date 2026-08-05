@@ -149,10 +149,7 @@ function normalizePathTail(permalink) {
   if (!normalized) return '';
   // 兼容有/无 baseUrl 与有/无 locale 前缀的场景
   return normalized
-    .replace(/^\/rdk_accessories_bmi088_doc\//, '/')
-    .replace(/^\/accessories_doc\//, '/')
-    .replace(/^\/rdk_s_doc\//, '/')
-    .replace(/^\/en\//, '/');
+    .replace(/^\/accessories_bmi088_doc\//, '/')
 }
 
 function isPermalinkVisible(permalink, visiblePermalinks) {

@@ -28,10 +28,7 @@ function normalizePath(path) {
 
 function normalizePathTail(path) {
   return normalizePath(path)
-    .replace(/^\/rdk_accessories_bmi088_doc\//, "/")
-    .replace(/^\/accessories_doc\//, "/")
-    .replace(/^\/rdk_s_doc\//, "/")
-    .replace(/^\/en\//, "/");
+    .replace(/^\/accessories_bmi088_doc\//, "/");
 }
 
 function splitPathSegments(path) {

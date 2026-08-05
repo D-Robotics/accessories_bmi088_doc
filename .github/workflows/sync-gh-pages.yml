@@ -32,7 +32,7 @@ jobs:
           OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
           OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
         run: |
-          ~/ossutil cp -r . oss://cn-rdk-front-prod/rdk_accessories_bmi088_doc/ \
+          ~/ossutil cp -r . oss://cn-rdk-front-prod/accessories_bmi088_doc/ \
           -e https://d-robotics.cc \
           -i $OSS_ACCESS_KEY_ID \
           -k $OSS_ACCESS_KEY_SECRET \

@@ -1,0 +1,1 @@
+(self.webpackChunkaccessories_bmi088_doc=self.webpackChunkaccessories_bmi088_doc||[]).push([[741],{5741:()=>{}}]);

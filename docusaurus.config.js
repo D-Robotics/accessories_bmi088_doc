@@ -84,18 +84,19 @@ const config = {
       src: "https://hm.baidu.com/hm.js?24dd63cad43b63889ea6bede5fd1ab9e",
       async: true,
     },
-    // Dify：仅加载配置脚本；embed.min.js 在 body 就绪后由 dify-config.js 动态注入
-    {
-      src: `${resolvedBaseUrl}js/dify-config.js`,
-    },
+    // Dify 小助手暂时关闭：仅加载配置脚本；embed.min.js 在 body 就绪后由 dify-config.js 动态注入
+    // {
+    //   src: `${resolvedBaseUrl}js/dify-config.js`,
+    // },
   ],
   headTags: [
-    {
-      tagName: "script",
-      attributes: {},
-      innerHTML:
-        "window.difyChatbotConfig=window.difyChatbotConfig||{token:'rJYrxmxmjOkjEx2c',baseUrl:'https://rdk.d-robotics.cc',inputs:{},systemVariables:{},userVariables:{},dynamicScript:true};",
-    },
+    // Dify 小助手暂时关闭
+    // {
+    //   tagName: "script",
+    //   attributes: {},
+    //   innerHTML:
+    //     "window.difyChatbotConfig=window.difyChatbotConfig||{token:'rJYrxmxmjOkjEx2c',baseUrl:'https://rdk.d-robotics.cc',inputs:{},systemVariables:{},userVariables:{},dynamicScript:true};",
+    // },
     {
       tagName: "meta",
       attributes: {

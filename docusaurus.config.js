@@ -26,6 +26,9 @@ const copyrightYearLabel =
     ? `${COPYRIGHT_START_YEAR}-${currentYear}`
     : `${COPYRIGHT_START_YEAR}`;
 
+// 英文站静态资源挂在 /en/ 子路径下，埋点脚本 src 需带 locale 前缀，否则英文站 404
+const localePrefix = process.env.DOCUSAURUS_CURRENT_LOCALE === "en" ? "/en" : "";
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "RDK Accessories DOC",
@@ -83,6 +86,10 @@ const config = {
     {
       src: "https://hm.baidu.com/hm.js?24dd63cad43b63889ea6bede5fd1ab9e",
       async: true,
+    },
+    {
+      src: `/accessories_bmi088_doc${localePrefix}/js/umami-events.js`,
+      defer: true,
     },
     // Dify 小助手暂时关闭：仅加载配置脚本；embed.min.js 在 body 就绪后由 dify-config.js 动态注入
     // {

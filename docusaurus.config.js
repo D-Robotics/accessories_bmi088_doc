@@ -42,6 +42,9 @@ const config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/accessories_bmi088_doc/",
   customFields: {
+    // Locale being built. Docusaurus renders the catch-all 404 route with the
+    // default-locale context, so the 404 page reads this value during SSG.
+    buildLocale: process.env.DOCUSAURUS_CURRENT_LOCALE || "zh-Hans",
     docBuildScope:
       buildProduct && buildVersion
         ? {

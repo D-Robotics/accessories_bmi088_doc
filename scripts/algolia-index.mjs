@@ -421,10 +421,48 @@ function extractLinks(pageUrl, html) {
   return [...links];
 }
 
+async function fetchSitemapUrls() {
+  const urls = new Set();
+  for (const rel of ["sitemap.xml", "en/sitemap.xml"]) {
+    const sitemapUrl = new URL(rel, SITE_URL).href;
+    try {
+      const res = await fetch(sitemapUrl, {
+        headers: { "User-Agent": "accessories-bmi088-doc-algolia-indexer/1.0" },
+        redirect: "follow",
+      });
+      if (!res.ok) {
+        console.warn(`[algolia-index] Sitemap unavailable: HTTP ${res.status} for ${sitemapUrl}`);
+        continue;
+      }
+      const xml = await res.text();
+      let count = 0;
+      for (const match of xml.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/g)) {
+        const normalized = normalizePageUrl(match[1]);
+        if (normalized && isIndexablePageUrl(normalized)) {
+          urls.add(normalized);
+          count += 1;
+        }
+      }
+      console.log(`[algolia-index] Sitemap ${sitemapUrl} -> ${count} URLs`);
+    } catch (error) {
+      console.warn(`[algolia-index] Sitemap fetch failed for ${sitemapUrl}: ${error.message || error}`);
+    }
+  }
+  return [...urls];
+}
+
 async function crawlSite() {
-  const siteRoot = normalizePageUrl(SITE_URL);
-  const enRoot = normalizePageUrl(new URL("en/", SITE_URL).href);
-  const seed = [siteRoot, enRoot, normalizePageUrl(new URL("en/introduction", SITE_URL).href)].filter(Boolean);
+  // 站点根（以及 /en/）在 Docusaurus 里不一定是正文页，可能只是重定向空壳或
+  // baseUrl 提示页；靠它们做种子会抓到 0 条记录。优先用线上 sitemap 做种子。
+  const sitemapSeeds = await fetchSitemapUrls();
+  const fallbackSeed = [
+    normalizePageUrl(SITE_URL),
+    normalizePageUrl(new URL("en/", SITE_URL).href),
+  ].filter(Boolean);
+  const seed = sitemapSeeds.length ? sitemapSeeds : fallbackSeed;
+  if (!sitemapSeeds.length) {
+    console.warn("[algolia-index] Falling back to root seeds; crawl coverage may be incomplete");
+  }
 
   const queue = [...new Set(seed)];
   const seen = new Set();
